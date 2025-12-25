@@ -5,7 +5,6 @@
   box-sizing: border-box;
   font-family: "Segoe UI", sans-serif;
 }
-/* REMOVE DEFAULT BROWSER SPACING */
 html,
 body {
   margin: 0;
@@ -15,7 +14,6 @@ body {
   overflow-x: hidden;
 }
 
-/* ================= NAVBAR ================= */
 .admin-navbar {
   height: 64px;
   width: 100%;
@@ -45,7 +43,6 @@ body {
   cursor: pointer;
 }
 
-  /* ✅ FIXED (class selector) */
 .logo {
   width: 36px;
   height: 36px;
@@ -78,7 +75,6 @@ body {
   background: #e60000;
 }
 
-/* ================= SIDEBAR ================= */
 .sidebar {
   position: fixed;
   top: 64px;
@@ -108,7 +104,6 @@ body {
   background: rgba(255, 255, 255, 0.1);
 }
 
-/* ================= CONTENT ================= */
 .content {
   margin-top: 64px;
   padding: 30px;
@@ -121,7 +116,6 @@ body {
   margin-left: 220px;
 }
 
-/* ================= DASHBOARD ================= */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -152,7 +146,6 @@ body {
   color: #000;
 }
 
-/* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
   .brand-name {
     display: none;
