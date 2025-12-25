@@ -6,7 +6,8 @@ const perfumeSchema = new mongoose.Schema(
     brand: String,
     price: Number,
     description: String,
-    image: String
+    image: String,
+    quantity: Number
   },
   { timestamps: true }
 );

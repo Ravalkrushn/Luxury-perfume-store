@@ -1,125 +1,64 @@
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   font-family: "Segoe UI", sans-serif;
 }
 
+/* MAIN ADMIN PAGE WRAPPER */
 .admin-page {
-  max-width: 1100px;
-  margin: auto;
-  padding: 20px;
+  min-height: 100vh;
+  background: #f5f6fa;
+  padding-top: 64px;
 }
 
-.admin-top {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  margin-bottom: 30px;
+/* DASHBOARD TITLE */
+.admin-page h2 {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #111;
 }
 
-.admin-top h1 {
-  font-size: 28px;
+/* STATS CARDS WRAPPER */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
 }
 
-.logout-btn {
-  position: absolute;
-  right: 0;
-  background: #000;
-  color: #fff;
-  border: none;
-  padding: 8px 16px;
-  cursor: pointer;
+/* SINGLE CARD */
+.card {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease;
 }
 
-.admin-section {
-  margin-bottom: 40px;
+.card:hover {
+  transform: translateY(-4px);
 }
 
-.admin-section h2 {
-  text-align: center;
-  margin-bottom: 20px;
+.card h3 {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 10px;
 }
 
-.admin-form {
-  max-width: 500px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+.card p {
+  font-size: 22px;
+  font-weight: bold;
+  color: #000;
 }
 
-.admin-form input,
-.admin-form textarea {
-  padding: 10px;
-  border: 1px solid #ccc;
-}
-
-.submit-btn {
-  background: #000;
-  color: #fff;
-  border: none;
-  padding: 12px;
-  cursor: pointer;
-}
-
-.table-wrapper {
-  overflow-x: auto;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-th,
-td {
-  border: 1px solid #ddd;
-  padding: 10px;
-  text-align: left;
-}
-
-th {
-  background: #f2f2f2;
-}
-
-td img {
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
-}
-
-/* ACTION BUTTONS */
-.edit {
-  background: #ffc107;
-  border: none;
-  padding: 6px 10px;
-  margin-right: 6px;
-}
-
-.delete {
-  background: #dc3545;
-  color: #fff;
-  border: none;
-  padding: 6px 10px;
-}
-
-/* MOBILE */
-@media (max-width: 600px) {
-  .admin-top {
-    flex-direction: column;
-    gap: 10px;
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .admin-page {
+    padding: 80px 20px 20px;
   }
 
-  .logout-btn {
-    position: static;
-  }
-
-  .admin-form {
-    width: 100%;
-  }
-
-  th,
-  td {
-    font-size: 14px;
+  .cards {
+    grid-template-columns: 1fr;
   }
 }
