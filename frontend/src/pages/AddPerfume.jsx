@@ -1,11 +1,15 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import API from "../services/api";
+import AdminWrapper from "../components/AdminWrapper";
 import "../components/AdminCrud.css";
 
 const AddPerfume = () => {
   if (!localStorage.getItem("admin")) {
     window.location.href = "/login";
   }
+
+  const navigate = useNavigate();
 
   const [perfume, setPerfume] = useState({
     name: "",
@@ -34,64 +38,74 @@ const AddPerfume = () => {
     });
 
     alert("Perfume Added");
-    window.location.href = "/collection";
+    navigate("/admin");
   };
 
   return (
-    <div className="admin-page">
-      <div className="admin-section">
-        <h2>Add Perfume</h2>
+    <AdminWrapper>
+      <div className="admin-page">
+        <div className="admin-section">
+          <h2>Add Perfume</h2>
 
-        <form className="admin-form" onSubmit={submit}>
-          <input
-            placeholder="Name"
-            onChange={(e) =>
-              setPerfume({ ...perfume, name: e.target.value })
-            }
-          />
+          <form className="admin-form" onSubmit={submit}>
+            <input
+              placeholder="Name"
+              onChange={(e) =>
+                setPerfume({ ...perfume, name: e.target.value })
+              }
+            />
 
-          <input
-            placeholder="Brand"
-            onChange={(e) =>
-              setPerfume({ ...perfume, brand: e.target.value })
-            }
-          />
+            <input
+              placeholder="Brand"
+              onChange={(e) =>
+                setPerfume({ ...perfume, brand: e.target.value })
+              }
+            />
 
-          <input
-            type="number"
-            placeholder="Price"
-            onChange={(e) =>
-              setPerfume({ ...perfume, price: e.target.value })
-            }
-          />
+            <input
+              type="number"
+              placeholder="Price"
+              onChange={(e) =>
+                setPerfume({ ...perfume, price: e.target.value })
+              }
+            />
 
-          <input
-            type="number"
-            placeholder="Quantity"
-            onChange={(e) =>
-              setPerfume({ ...perfume, quantity: e.target.value })
-            }
-          />
+            <input
+              type="number"
+              placeholder="Quantity"
+              onChange={(e) =>
+                setPerfume({ ...perfume, quantity: e.target.value })
+              }
+            />
 
-          <input
-            type="file"
-            accept="image/*"
-            onChange={(e) =>
-              setPerfume({ ...perfume, image: e.target.files[0] })
-            }
-          />
+            <input
+              type="file"
+              accept="image/*"
+              onChange={(e) =>
+                setPerfume({ ...perfume, image: e.target.files[0] })
+              }
+            />
 
-          <textarea
-            placeholder="Description"
-            onChange={(e) =>
-              setPerfume({ ...perfume, description: e.target.value })
-            }
-          />
+            <textarea
+              placeholder="Description"
+              onChange={(e) =>
+                setPerfume({ ...perfume, description: e.target.value })
+              }
+            />
 
-          <button className="submit-btn">Save</button>
-        </form>
+            <button className="submit-btn">Save</button>
+
+            <button
+              type="button"
+              onClick={() => navigate("/admin")}
+              style={{ marginTop: 20 }}
+            >
+              ⬅ Back to Dashboard
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
+    </AdminWrapper>
   );
 };
 

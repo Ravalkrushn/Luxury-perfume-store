@@ -1,6 +1,7 @@
 const express = require("express");
 const Perfume = require("../models/Perfume");
 const multer = require("multer");
+
 const router = express.Router();
 
 const storage = multer.diskStorage({
@@ -19,6 +20,7 @@ router.post("/", upload.single("image"), async (req, res) => {
     name: req.body.name,
     brand: req.body.brand,
     price: req.body.price,
+    quantity: req.body.quantity,         
     description: req.body.description,
     image: req.file ? `/uploads/${req.file.filename}` : "",
   });
@@ -31,6 +33,7 @@ router.put("/:id", upload.single("image"), async (req, res) => {
     name: req.body.name,
     brand: req.body.brand,
     price: req.body.price,
+    quantity: req.body.quantity,           
     description: req.body.description,
   };
 
@@ -48,7 +51,7 @@ router.put("/:id", upload.single("image"), async (req, res) => {
 });
 
 router.get("/", async (req, res) => {
-  const perfumes = await Perfume.find();
+  const perfumes = await Perfume.find().sort({ createdAt: -1 });
   res.json(perfumes);
 });
 

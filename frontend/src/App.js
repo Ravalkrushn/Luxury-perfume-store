@@ -6,6 +6,8 @@ import AddPerfume from "./pages/AddPerfume";
 import Collection from "./pages/Collection";
 import LearnMore from "./pages/LearnMore";
 import About from "./pages/About";
+import AdminPerfumeList from "./pages/AdminPerfumeList";
+
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
         <Route path="/collection" element={<Collection />} />
         <Route path="/learn-more" element={<LearnMore />} />
         <Route path="/about" element={<About />} />
+        <Route path="/admin/perfume-list" element={<AdminPerfumeList />} />
+    
       </Routes>
     </BrowserRouter>
   );
