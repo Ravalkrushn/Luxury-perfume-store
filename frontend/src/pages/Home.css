@@ -1,3 +1,4 @@
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -7,31 +8,39 @@
 
 html,
 body {
+  width: 100%;
+  height: 100%;
   overflow-x: hidden;
 }
 
+/* HOME */
 .home {
   min-height: 100vh;
   width: 100%;
   background-size: cover;
   background-position: center;
   color: #fff;
-  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
+/* ================= NAVBAR ================= */
 .navbar {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 22px 60px;
 }
 
+/* LOGO */
 .logo {
   font-size: 22px;
   font-weight: 700;
   letter-spacing: 3px;
 }
 
+/* NAV LINKS */
 .nav-links {
   list-style: none;
   display: flex;
@@ -40,24 +49,23 @@ body {
 
 .nav-links a {
   text-decoration: none;
-  color: #ffffff;
-  font-weight: 500;
+  color: #fff;
   font-size: 16px;
-  transition: color 0.3s ease;
+  font-weight: 500;
 }
 
 .nav-links a:hover {
   color: #f5b041;
 }
 
+/* LOGIN BUTTON */
 .login-btn {
   padding: 8px 22px;
   border-radius: 25px;
   background: transparent;
-  color: #fff;
   border: 1px solid #fff;
+  color: #fff;
   cursor: pointer;
-  transition: all 0.3s ease;
 }
 
 .login-btn:hover {
@@ -65,21 +73,22 @@ body {
   color: #000;
 }
 
+/* ================= HERO ================= */
 .hero {
-  min-height: calc(100vh - 90px);
+  flex: 1;
   display: flex;
   align-items: center;
-  padding: 0 20px;
+  padding: 40px 60px;
 }
 
 .hero-content {
-  max-width: 620px;
+  max-width: 650px;
 }
 
 .hero-content h1 {
-  font-size: 58px;
+  font-size: 56px;
   line-height: 1.2;
-  margin-bottom: 22px;
+  margin-bottom: 20px;
 }
 
 .hero-content h1 span {
@@ -89,12 +98,12 @@ body {
 .hero-content p {
   font-size: 18px;
   opacity: 0.9;
-  margin-bottom: 35px;
+  margin-bottom: 32px;
 }
 
 .hero-buttons {
   display: flex;
-  gap: 20px;
+  gap: 18px;
 }
 
 .primary-btn {
@@ -103,8 +112,8 @@ body {
   border: none;
   color: #000;
   font-size: 16px;
-  cursor: pointer;
   border-radius: 30px;
+  cursor: pointer;
 }
 
 .secondary-btn {
@@ -113,48 +122,75 @@ body {
   border: 1px solid #fff;
   color: #fff;
   font-size: 16px;
-  cursor: pointer;
   border-radius: 30px;
+  cursor: pointer;
 }
 
-.primary-btn,
-.secondary-btn,
-.login-btn {
-  -webkit-tap-highlight-color: transparent;
-}
-
+/* ================= TABLET ================= */
 @media (max-width: 900px) {
   .navbar {
     padding: 20px 30px;
   }
 
+  .hero {
+    padding: 40px 30px;
+  }
+
   .hero-content h1 {
-    font-size: 46px;
+    font-size: 44px;
   }
 }
 
+/* ================= MOBILE FIX (IMPORTANT) ================= */
 @media (max-width: 600px) {
+
+  /* NAVBAR */
   .navbar {
+    display: flex;
     flex-direction: column;
-    gap: 14px;
-    padding: 18px 20px;
+    padding: 16px 18px;
+    gap: 10px;
   }
 
+  /* FIRST ROW: LOGO + LOGIN */
+  .navbar {
+    position: relative;
+  }
+
+  .logo {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-right: 290px;
+    margin-bottom: 20px;
+  }
+
+  .login-btn {
+    position: absolute;
+    top: 29px;
+    right: 18px;
+    padding: 6px 18px;
+    font-size: 14px;
+  }
+
+  /* NAV LINKS BELOW */
   .nav-links {
+    display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 18px;
-    background: transparent;
+    gap: 16px;
+    margin-top: 6px;
   }
 
   .nav-links a {
     font-size: 14px;
   }
 
+  /* HERO CENTER */
   .hero {
-    padding: 0 18px;
-    justify-content: center;
+    padding: 30px 18px;
     text-align: center;
+    justify-content: center;
   }
 
   .hero-content {
@@ -162,20 +198,20 @@ body {
   }
 
   .hero-content h1 {
-    font-size: 32px;
-    line-height: 1.25;
-    margin-bottom: 18px;
+    font-size: 30px;
+    line-height: 1.3;
+    margin-bottom: 16px;
   }
 
   .hero-content p {
     font-size: 15px;
-    margin-bottom: 28px;
+    margin-bottom: 26px;
   }
 
   .hero-buttons {
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap: 14px;
   }
 
   .primary-btn,
@@ -186,3 +222,11 @@ body {
     font-size: 15px;
   }
 }
+
+/* REMOVE TAP HIGHLIGHT */
+.primary-btn,
+.secondary-btn,
+.login-btn {
+  -webkit-tap-highlight-color: transparent;
+}
+

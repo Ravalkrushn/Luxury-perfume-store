@@ -1,14 +1,12 @@
-/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Segoe UI", sans-serif;
 }
+
 html,
 body {
-  margin: 0;
-  padding: 0;
   width: 100%;
   height: 100%;
   overflow-x: hidden;
@@ -22,11 +20,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 0 16px;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 5000;
 }
 
 .nav-left {
@@ -68,11 +66,7 @@ body {
   padding: 8px 16px;
   border-radius: 6px;
   cursor: pointer;
-  transition: 0.2s;
-}
-
-.logout:hover {
-  background: #e60000;
+  font-size: 14px;
 }
 
 .sidebar {
@@ -82,95 +76,35 @@ body {
   width: 220px;
   height: calc(100vh - 64px);
   background: linear-gradient(180deg, #000, #111);
-  padding-top: 20px;
   transform: translateX(-100%);
   transition: transform 0.3s ease;
-  z-index: 999;
+  z-index: 2000;
 }
 
 .sidebar.open {
   transform: translateX(0);
 }
 
-.sidebar p {
-  color: #fff;
-  padding: 14px 20px;
-  cursor: pointer;
-  font-size: 15px;
-  transition: 0.2s;
-}
-
-.sidebar p:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
-
 .content {
   margin-top: 64px;
   padding: 30px;
-  transition: margin-left 0.3s ease;
   background: #f5f6fa;
   min-height: calc(100vh - 64px);
-}
-
-.content.shift {
-  margin-left: 220px;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-}
-
-.card {
-  background: #fff;
-  padding: 24px;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-}
-
-.card h3 {
-  font-size: 16px;
-  color: #555;
-  margin-bottom: 10px;
-}
-
-.card p {
-  font-size: 22px;
-  font-weight: bold;
-  color: #000;
 }
 
 @media (max-width: 768px) {
   .brand-name {
     display: none;
   }
-
-  .sidebar {
-    width: 200px;
-  }
-
-  .content.shift {
-    margin-left: 0;
-  }
-
-  .sidebar.open + .content {
-    filter: blur(2px);
-  }
 }
 
 @media (max-width: 480px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-
   .logout {
-    padding: 6px 10px;
-    font-size: 14px;
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    z-index: 7000;
+    padding: 6px 14px;
+    font-size: 13px;
   }
 }
