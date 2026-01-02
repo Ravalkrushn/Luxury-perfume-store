@@ -10,6 +10,26 @@ body {
   width: 100%;
   overflow-x: hidden;
 }
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.add-btn {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.add-btn:hover {
+  background: #222;
+}
 
 .admin-navbar {
   position: fixed;

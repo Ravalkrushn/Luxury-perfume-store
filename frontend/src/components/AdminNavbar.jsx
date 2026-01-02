@@ -1,14 +1,11 @@
 import React from "react";
 import "./adminLayout.css";
 
-const AdminNavbar = ({ toggle }) => {
+const AdminNavbar = () => {
   return (
     <div className="admin-navbar">
       <div className="nav-left">
-        <span className="hamburger" onClick={toggle}>
-          ☰
-        </span>
-        <img src="/LOGOPERFUME.svg" alt="logo" className="logo" />
+        <img src="/logo192.png" alt="logo" className="logo" />
         <span className="brand">Luxury Perfume</span>
       </div>
 

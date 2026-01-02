@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import API from "../services/api";
 import AdminWrapper from "../components/AdminWrapper";
 import "./AdminPerfumeList.css";
@@ -15,6 +17,7 @@ const AdminPerfumeList = () => {
   useEffect(() => {
     loadPerfumes();
   }, []);
+const navigate = useNavigate();
 
   const deletePerfume = async (id) => {
     if (!window.confirm("Are you sure you want to delete this perfume?")) return;
@@ -48,7 +51,17 @@ const AdminPerfumeList = () => {
 
   return (
     <AdminWrapper>
-      <h2 className="page-title">Perfume List</h2>
+      <div className="page-header">
+  <h2 className="page-title">Perfume List</h2>
+
+  <button
+    className="add-btn"
+    onClick={() => navigate("/admin/add-perfume")}
+  >
+    + Add Perfume
+  </button>
+</div>
+
 
       <div className="table-card">
         <table className="perfume-table">

@@ -16,8 +16,8 @@ body {
 .admin-navbar {
   height: 64px;
   width: 100%;
-  background: linear-gradient(90deg, #000, #111);
-  color: #fff;
+  background: linear-gradient(90deg, #ffffff, #fffcfc);
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: space-between;

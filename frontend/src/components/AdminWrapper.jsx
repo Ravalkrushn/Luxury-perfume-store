@@ -1,17 +1,14 @@
-import { useState } from "react";
 import AdminNavbar from "./AdminNavbar";
 import AdminSidebar from "./AdminSidebar";
 import "./adminLayout.css";
 
 const AdminWrapper = ({ children }) => {
-  const [open, setOpen] = useState(false);
-
   return (
     <>
-      <AdminNavbar toggle={() => setOpen(!open)} />
-      <AdminSidebar open={open} />
+      <AdminNavbar />
+      <AdminSidebar />
 
-      <div className={`content ${open ? "shift" : ""}`}>
+      <div className="content shift">
         {children}
       </div>
     </>
