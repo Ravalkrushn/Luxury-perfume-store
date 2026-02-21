@@ -18,6 +18,11 @@ app.use("/api/auth", authRoutes);
 app.use("/api/perfumes", perfumeRoutes);
 app.use("/api/dashboard", dashboardRoutes);
 
+// Global Error Handler (Add this to see errors in Postman)
+app.use((err, req, res, next) => {
+  console.error("Backend Error:", err);
+  res.status(500).json({ message: "Internal Server Error", error: err.message });
+});
 
 mongoose
   .connect(process.env.MONGO_URI)

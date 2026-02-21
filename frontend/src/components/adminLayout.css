@@ -16,8 +16,9 @@ body {
 .admin-navbar {
   height: 64px;
   width: 100%;
-  background: linear-gradient(90deg, #ffffff, #fffcfc);
-  color: #ffffff;
+  background: #ffffff !important;
+  color: #333333 !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   display: flex;
   align-items: center;
   justify-content: space-between;

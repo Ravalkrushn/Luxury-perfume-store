@@ -3,6 +3,9 @@ import { gsap } from "gsap";
 import "./Home.css";
 import { Link } from "react-router-dom";
 
+// Variable to track if animation has played in this session
+let hasAnimationPlayed = false;
+
 const Home = () => {
   const homeRef = useRef(null);
   const logoRef = useRef(null);
@@ -10,6 +13,8 @@ const Home = () => {
   const contentRef = useRef(null);
 
   useEffect(() => {
+    if (hasAnimationPlayed) return;
+
     gsap.set(homeRef.current, { scale: 1.3 });
     gsap.set(logoRef.current, { y: -150, opacity: 0 });
     gsap.set(navRef.current, { x: 220, opacity: 0 });
@@ -43,6 +48,8 @@ const Home = () => {
         duration: 1.5,
         ease: "power4.out",
       });
+
+    hasAnimationPlayed = true;
   }, []);
 
   return (

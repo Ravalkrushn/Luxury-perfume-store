@@ -1,12 +1,18 @@
 import React from "react";
+import { FaSignOutAlt } from "react-icons/fa";
 import "./adminLayout.css";
 
 const AdminNavbar = () => {
   return (
-    <div className="admin-navbar">
+    <div
+      className="admin-navbar"
+      style={{ backgroundColor: "#ffffff", color: "#333333" }}
+    >
       <div className="nav-left">
         <img src="/logo192.png" alt="logo" className="logo" />
-        <span className="brand">Luxury Perfume</span>
+        <span className="brand" style={{ color: "#333333" }}>
+          Luxury Perfume
+        </span>
       </div>
 
       <button
@@ -15,8 +21,9 @@ const AdminNavbar = () => {
           localStorage.removeItem("admin");
           window.location.href = "/login";
         }}
+        style={{ display: "flex", alignItems: "center", gap: "8px" }}
       >
-        Logout
+        <FaSignOutAlt /> Logout
       </button>
     </div>
   );
