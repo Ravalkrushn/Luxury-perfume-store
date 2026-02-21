@@ -3,9 +3,6 @@ import { gsap } from "gsap";
 import "./Home.css";
 import { Link } from "react-router-dom";
 
-// Variable to track if animation has played in this session
-let hasAnimationPlayed = false;
-
 const Home = () => {
   const homeRef = useRef(null);
   const logoRef = useRef(null);
@@ -13,6 +10,7 @@ const Home = () => {
   const contentRef = useRef(null);
 
   useEffect(() => {
+    const hasAnimationPlayed = sessionStorage.getItem("animationPlayed");
     if (hasAnimationPlayed) return;
 
     gsap.set(homeRef.current, { scale: 1.3 });
@@ -49,7 +47,7 @@ const Home = () => {
         ease: "power4.out",
       });
 
-    hasAnimationPlayed = true;
+    sessionStorage.setItem("animationPlayed", "true");
   }, []);
 
   return (
@@ -71,7 +69,7 @@ const Home = () => {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/collection">Explore Collection</Link>
+            <Link to="/Collection">Explore Collection</Link>
           </li>
           <li>
             <Link to="/learn-more">Learn More</Link>
@@ -97,7 +95,9 @@ const Home = () => {
           </p>
 
           <div className="hero-buttons">
-            <button className="primary-btn">Explore Collection</button>
+            <Link to="/Collection">
+              <button className="primary-btn">Explore Collection</button>
+            </Link>
             <button className="secondary-btn">Learn More</button>
           </div>
         </div>

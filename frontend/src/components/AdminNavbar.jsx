@@ -11,7 +11,7 @@ const AdminNavbar = () => {
       <div className="nav-left">
         <img src="/logo192.png" alt="logo" className="logo" />
         <span className="brand" style={{ color: "#333333" }}>
-          Luxury Perfume
+          LUXURY SCENT
         </span>
       </div>
 
